@@ -1,0 +1,110 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-03-09 21:22+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+#: movies/apps.py:8
+msgid "movies"
+msgstr ""
+
+#: movies/models.py:10
+msgid "created"
+msgstr ""
+
+#: movies/models.py:12
+msgid "modified"
+msgstr ""
+
+#: movies/models.py:32
+msgid "name"
+msgstr ""
+
+#: movies/models.py:34 movies/models.py:67
+msgid "description"
+msgstr ""
+
+#: movies/models.py:40 movies/models.py:88
+msgid "Genre_verbose_name"
+msgstr ""
+
+#: movies/models.py:41
+msgid "Genre__verbose_name_plural"
+msgstr ""
+
+#: movies/models.py:50
+msgid "person_full_name"
+msgstr ""
+
+#: movies/models.py:54 movies/models.py:94
+msgid "Person_verbose_name"
+msgstr ""
+
+#: movies/models.py:55
+msgid "Person_verbose_name_plural"
+msgstr ""
+
+#: movies/models.py:65
+msgid "title"
+msgstr ""
+
+#: movies/models.py:69
+msgid "creation_date"
+msgstr ""
+
+#: movies/models.py:72
+msgid "rating"
+msgstr ""
+
+#: movies/models.py:79
+msgid "movie"
+msgstr ""
+
+#: movies/models.py:80
+msgid "tv_show"
+msgstr ""
+
+#: movies/models.py:82
+msgid "type"
+msgstr ""
+
+#: movies/models.py:101
+msgid "Filmwork_verbose_name"
+msgstr ""
+
+#: movies/models.py:102
+msgid "Filmwork_verbose_name_plural"
+msgstr ""
+
+#: movies/models.py:117
+msgid "GenreFilmwork_verbose_name"
+msgstr ""
+
+#: movies/models.py:118
+msgid "GenreFilmwork_verbose_name_plural"
+msgstr ""
+
+#: movies/models.py:126
+msgid "role"
+msgstr ""
+
+#: movies/models.py:131
+msgid "PersonFilmWork_verbose_name"
+msgstr ""
+
+#: movies/models.py:132
+msgid "PersonFilmWork_verbose_name_plural"
+msgstr ""
