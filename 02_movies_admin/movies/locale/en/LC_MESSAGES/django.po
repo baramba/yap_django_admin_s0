@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-03-09 21:22+0000\n"
+"POT-Creation-Date: 2022-03-11 17:50+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,6 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
 #: movies/apps.py:8
 msgid "movies"
 msgstr ""
@@ -81,30 +82,34 @@ msgstr ""
 msgid "type"
 msgstr ""
 
-#: movies/models.py:101
+#: movies/models.py:97
+msgid "file_field"
+msgstr ""
+
+#: movies/models.py:103
 msgid "Filmwork_verbose_name"
 msgstr ""
 
-#: movies/models.py:102
+#: movies/models.py:104
 msgid "Filmwork_verbose_name_plural"
 msgstr ""
 
-#: movies/models.py:117
+#: movies/models.py:119
 msgid "GenreFilmwork_verbose_name"
 msgstr ""
 
-#: movies/models.py:118
+#: movies/models.py:120
 msgid "GenreFilmwork_verbose_name_plural"
 msgstr ""
 
-#: movies/models.py:126
+#: movies/models.py:128
 msgid "role"
 msgstr ""
 
-#: movies/models.py:131
+#: movies/models.py:133
 msgid "PersonFilmWork_verbose_name"
 msgstr ""
 
-#: movies/models.py:132
+#: movies/models.py:134
 msgid "PersonFilmWork_verbose_name_plural"
 msgstr ""

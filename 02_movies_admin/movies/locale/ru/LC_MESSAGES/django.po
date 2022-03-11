@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-03-09 21:22+0000\n"
+"POT-Creation-Date: 2022-03-11 17:50+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -83,30 +83,34 @@ msgstr "сериал"
 msgid "type"
 msgstr "тип"
 
-#: movies/models.py:101
+#: movies/models.py:97
+msgid "file_field"
+msgstr "путь к файлу"
+
+#: movies/models.py:103
 msgid "Filmwork_verbose_name"
 msgstr "кинопроизведение"
 
-#: movies/models.py:102
+#: movies/models.py:104
 msgid "Filmwork_verbose_name_plural"
 msgstr "кинопроизведения"
 
-#: movies/models.py:117
+#: movies/models.py:119
 msgid "GenreFilmwork_verbose_name"
 msgstr "жанркинопроизведение"
 
-#: movies/models.py:118
+#: movies/models.py:120
 msgid "GenreFilmwork_verbose_name_plural"
 msgstr "жанркинопроизведения"
 
-#: movies/models.py:126
+#: movies/models.py:128
 msgid "role"
 msgstr "роль"
 
-#: movies/models.py:131
+#: movies/models.py:133
 msgid "PersonFilmWork_verbose_name"
 msgstr "участниккинопроизведение"
 
-#: movies/models.py:132
+#: movies/models.py:134
 msgid "PersonFilmWork_verbose_name_plural"
 msgstr "участникикинопроизведения"
