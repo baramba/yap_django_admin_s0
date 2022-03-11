@@ -93,6 +93,8 @@ class Filmwork(TimeStampedMixin, UUIDMixin):
         through="PersonFilmWork",
         verbose_name=_("Person_verbose_name"),
     )
+    # Путь к файлу
+    file_path = models.FileField(_("file_field"), blank=True, null=True, upload_to=None)
 
     class Meta:
         # Ваши таблицы находятся в нестандартной схеме. Это нужно указать в классе модели
