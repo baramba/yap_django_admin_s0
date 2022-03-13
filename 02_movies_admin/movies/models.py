@@ -66,11 +66,12 @@ class Filmwork(TimeStampedMixin, UUIDMixin):
     # Описание
     description = models.TextField(_("description"), blank=True, max_length=350)
     # Дата выхода
-    creation_date = models.DateField(_("creation_date"), blank=False)
+    creation_date = models.DateField(_("creation_date"), blank=False, null=True)
     # Рейтинг
     rating = models.FloatField(
         _("rating"),
         blank=True,
+        null=True,
         validators=[MinValueValidator(0), MaxValueValidator(100)],
     )
 
@@ -118,6 +119,9 @@ class GenreFilmwork(UUIDMixin):
         db_table = 'content"."genre_film_work'
         verbose_name = _("GenreFilmwork_verbose_name")
         verbose_name_plural = _("GenreFilmwork_verbose_name_plural")
+        indexes = [
+            models.Index(fields=["film_work", "genre"], name="film_work_genre_idx")
+        ]
 
 
 class PersonFilmWork(UUIDMixin):
@@ -132,3 +136,9 @@ class PersonFilmWork(UUIDMixin):
         db_table = 'content"."person_film_work'
         verbose_name = _("PersonFilmWork_verbose_name")
         verbose_name_plural = _("PersonFilmWork_verbose_name_plural")
+
+        indexes = [
+            models.Index(
+                fields=["film_work", "person", "role"], name="person_film_work_role_idx"
+            )
+        ]
