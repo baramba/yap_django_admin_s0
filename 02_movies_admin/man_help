@@ -1,0 +1,31 @@
+
+# генерация модели модель
+python3 manage.py inspectdb
+
+# создание локализаций
+python3 manage.py makemessages -l en -l ru 
+python manage.py compilemessages -l en -l ru
+
+# запуск сервера
+python3 manage.py runserver
+
+# создание миграций
+python manage.py makemigrations movies --settings=config.settings
+python3 manage.py makemigrations --name gender movies
+
+#создание пустой миграции
+python manage.py makemigrations --empty movies
+
+# проверка sql на основании миграций
+python3 manage.py sqlmigrate movies 0003
+
+# список миграций
+python3 manage.py showmigrations
+python3 manage.py showmigrations movies
+
+# запустить миграцию
+python3 manage.py migrate --fake-initial movies
+python manage.py migrate --fake movies
+
+# системные проверки https://docs.djangoproject.com/en/3.1/topics/checks/
+python manage.py check
