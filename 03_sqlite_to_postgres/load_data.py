@@ -2,9 +2,12 @@
 
 import os
 import sqlite3
+import sys
+import logging
 
 import psycopg2
 from dotenv import load_dotenv
+from psycopg2 import OperationalError, errorcodes, errors
 from psycopg2.extensions import connection as _connection
 from psycopg2.extras import DictCursor, execute_values
 
@@ -50,7 +53,7 @@ class SQLiteLoader(object):
         """get_row_gen генератор для чтения данных из БД по self.fetch_size записей.
 
         Yields:
-            генератор порции записей из БД
+            генератор для получения данных из SQLite
         """
 
         for table_class in TABLES:
@@ -105,8 +108,10 @@ if __name__ == "__main__":
     }
     workdir = os.path.dirname(__file__)
     path_to_db_file = workdir + "/db.sqlite"
-    with sqlite3.connect(path_to_db_file) as sq_conn:
-        with psycopg2.connect(**dsl, cursor_factory=DictCursor) as pg_conn:
-
-            load_from_sqlite(sq_conn, pg_conn)
-            pg_conn.commit()
+    try:
+        with sqlite3.connect(path_to_db_file) as sq_conn:
+            with psycopg2.connect(**dsl, cursor_factory=DictCursor) as pg_conn:
+                load_from_sqlite(sq_conn, pg_conn)
+                pg_conn.commit()
+    except (OperationalError, sqlite3.Error) as err:
+        logging.error("Ошибка работы с БД:\n {e}".format(e=err))
