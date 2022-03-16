@@ -6,19 +6,14 @@ from django.utils.translation import gettext_lazy as _
 
 
 class TimeStampedMixin(models.Model):
-    # auto_now_add автоматически выставит дату создания записи
     created = models.DateTimeField(_("created"), auto_now_add=True)
-    # auto_now изменятся при каждом обновлении записи
     modified = models.DateTimeField(_("modified"), auto_now=True)
 
     class Meta:
-        # Этот параметр указывает Django, что этот класс не является представлением таблицы
         abstract = True
 
 
 class UUIDMixin(models.Model):
-    # Типичная модель в Django использует число в качестве id. В таких ситуациях поле не описывается в модели.
-    # Вам же придётся явно объявить primary key.
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
 
     class Meta:
@@ -28,15 +23,11 @@ class UUIDMixin(models.Model):
 class Genre(UUIDMixin, TimeStampedMixin):
     """Жанры."""
 
-    # Первым аргументом обычно идёт человекочитаемое название поля
     name = models.CharField(_("name"), max_length=150)
-    # blank=True делает поле необязательным для заполнения.
     description = models.TextField(_("description"), blank=True, max_length=350)
 
     class Meta:
-        # Ваши таблицы находятся в нестандартной схеме. Это нужно указать в классе модели
         db_table = 'content"."genre'
-        # Следующие два поля отвечают за название модели в интерфейсе
         verbose_name = _("Genre_verbose_name")
         verbose_name_plural = _("Genre__verbose_name_plural")
 
@@ -98,9 +89,7 @@ class Filmwork(TimeStampedMixin, UUIDMixin):
     file_path = models.FileField(_("file_field"), blank=True, null=True, upload_to=None)
 
     class Meta:
-        # Ваши таблицы находятся в нестандартной схеме. Это нужно указать в классе модели
         db_table = 'content"."film_work'
-        # Следующие два поля отвечают за название модели в интерфейсе
         verbose_name = _("Filmwork_verbose_name")
         verbose_name_plural = _("Filmwork_verbose_name_plural")
 
@@ -129,7 +118,20 @@ class PersonFilmWork(UUIDMixin):
 
     film_work = models.ForeignKey("Filmwork", on_delete=models.CASCADE)
     person = models.ForeignKey("Person", on_delete=models.CASCADE)
-    role = models.CharField(_("role"), blank=False, max_length=150)
+
+    # Роль участника в кинопроизведении
+    class RoleInWorkfilm(models.TextChoices):
+        FRESHMAN = "actor", _("actor")
+        SOPHOMORE = "director", _("director")
+        JUNIOR = "writer", _("writer")
+
+    role = models.CharField(
+        _("role"),
+        choices=RoleInWorkfilm,
+        blank=False,
+        max_length=10,
+    )
+
     created = models.DateTimeField(auto_now_add=True)
 
     class Meta:
