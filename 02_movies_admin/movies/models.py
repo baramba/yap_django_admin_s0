@@ -127,7 +127,7 @@ class PersonFilmWork(UUIDMixin):
 
     role = models.CharField(
         _("role"),
-        choices=RoleInWorkfilm,
+        choices=RoleInWorkfilm.choices,
         blank=False,
         max_length=10,
     )
