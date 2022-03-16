@@ -121,9 +121,9 @@ class PersonFilmWork(UUIDMixin):
 
     # Роль участника в кинопроизведении
     class RoleInWorkfilm(models.TextChoices):
-        FRESHMAN = "actor", _("actor")
-        SOPHOMORE = "director", _("director")
-        JUNIOR = "writer", _("writer")
+        ACTOR = "actor", _("actor")
+        DIRECTOR = "director", _("director")
+        WRITER = "writer", _("writer")
 
     role = models.CharField(
         _("role"),

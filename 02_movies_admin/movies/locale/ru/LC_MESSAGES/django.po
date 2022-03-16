@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-03-11 17:50+0000\n"
+"POT-Creation-Date: 2022-03-16 13:01+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -23,94 +23,106 @@ msgstr ""
 msgid "movies"
 msgstr "фильмы"
 
-#: movies/models.py:10
+#: movies/models.py:9
 msgid "created"
 msgstr "время создания"
 
-#: movies/models.py:12
+#: movies/models.py:10
 msgid "modified"
 msgstr "время изменения"
 
-#: movies/models.py:32
+#: movies/models.py:26
 msgid "name"
 msgstr "имя"
 
-#: movies/models.py:34 movies/models.py:67
+#: movies/models.py:27 movies/models.py:58
 msgid "description"
 msgstr "описание"
 
-#: movies/models.py:40 movies/models.py:88
+#: movies/models.py:31 movies/models.py:80
 msgid "Genre_verbose_name"
 msgstr "жанр"
 
-#: movies/models.py:41
+#: movies/models.py:32
 msgid "Genre__verbose_name_plural"
 msgstr "жанры"
 
-#: movies/models.py:50
+#: movies/models.py:41
 msgid "person_full_name"
 msgstr "полное имя"
 
-#: movies/models.py:54 movies/models.py:94
+#: movies/models.py:45 movies/models.py:86
 msgid "Person_verbose_name"
 msgstr "участник"
 
-#: movies/models.py:55
+#: movies/models.py:46
 msgid "Person_verbose_name_plural"
 msgstr "участники"
 
-#: movies/models.py:65
+#: movies/models.py:56
 msgid "title"
 msgstr "название"
 
-#: movies/models.py:69
+#: movies/models.py:60
 msgid "creation_date"
 msgstr "дата выхода"
 
-#: movies/models.py:72
+#: movies/models.py:63
 msgid "rating"
 msgstr "рейтинг"
 
-#: movies/models.py:79
+#: movies/models.py:71
 msgid "movie"
 msgstr "фильм"
 
-#: movies/models.py:80
+#: movies/models.py:72
 msgid "tv_show"
 msgstr "сериал"
 
-#: movies/models.py:82
+#: movies/models.py:74
 msgid "type"
 msgstr "тип"
 
-#: movies/models.py:97
+#: movies/models.py:89
 msgid "file_field"
 msgstr "путь к файлу"
 
-#: movies/models.py:103
+#: movies/models.py:93
 msgid "Filmwork_verbose_name"
 msgstr "кинопроизведение"
 
-#: movies/models.py:104
+#: movies/models.py:94
 msgid "Filmwork_verbose_name_plural"
 msgstr "кинопроизведения"
 
-#: movies/models.py:119
+#: movies/models.py:109
 msgid "GenreFilmwork_verbose_name"
 msgstr "жанркинопроизведение"
 
-#: movies/models.py:120
+#: movies/models.py:110
 msgid "GenreFilmwork_verbose_name_plural"
 msgstr "жанркинопроизведения"
 
-#: movies/models.py:128
+#: movies/models.py:124
+msgid "actor"
+msgstr "Актёр"
+
+#: movies/models.py:125
+msgid "director"
+msgstr "Режиссёр"
+
+#: movies/models.py:126
+msgid "writer"
+msgstr "Сценарист"
+
+#: movies/models.py:129
 msgid "role"
 msgstr "роль"
 
-#: movies/models.py:133
+#: movies/models.py:139
 msgid "PersonFilmWork_verbose_name"
 msgstr "участниккинопроизведение"
 
-#: movies/models.py:134
+#: movies/models.py:140
 msgid "PersonFilmWork_verbose_name_plural"
 msgstr "участникикинопроизведения"
