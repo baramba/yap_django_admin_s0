@@ -115,3 +115,6 @@ if __name__ == "__main__":
                 pg_conn.commit()
     except (OperationalError, sqlite3.Error) as err:
         logging.error("Ошибка работы с БД:\n {e}".format(e=err))
+    finally:
+        pg_conn.close()
+        sq_conn.close()
