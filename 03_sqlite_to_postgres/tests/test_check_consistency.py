@@ -1,6 +1,7 @@
 import logging
 import os
 import sqlite3
+from typing import final
 
 import dateutil.parser
 import psycopg2
@@ -69,13 +70,6 @@ class TestConsMigration(object):
             data_row["created"] = dateutil.parser.isoparse(data_row["created"])
         if "modified" in data_row:
             data_row["modified"] = dateutil.parser.isoparse(data_row["modified"])
-        # data_row["created"] = dateutil.parser.isoparse(
-        #     "".join([data_row[columns.index("created")], ":00"])
-        # )
-        # data_row[columns.index("modified")] = dateutil.parser.isoparse(
-        #     "".join([data_row[columns.index("modified")], ":00"])
-        # )
-        # приводим None к ""
         if "description" in data_row and data_row["description"] is None:
             data_row["description"] = ""
         return data_row
