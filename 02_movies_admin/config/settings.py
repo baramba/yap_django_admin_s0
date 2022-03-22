@@ -38,8 +38,11 @@ USE_L10N = True
 
 USE_TZ = True
 
-STATIC_URL = "/static/"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 LOCALE_PATH = ["movies/locale"]
+
+STATIC_URL = "static/"
+
+STATIC_ROOT = "{BASE_DIR}/static".format(BASE_DIR=BASE_DIR)
