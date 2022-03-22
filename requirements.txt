@@ -2,7 +2,7 @@ flake8==4.0
 pytest==6.2.5
 pre-commit==2.15.0
 wemake-python-styleguide==0.16
-django==3.2
+django==3.2.12
 wheel==0.37.1
 python-dotenv==0.19.2
 django-split-settings==1.1.0
