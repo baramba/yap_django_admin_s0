@@ -28,9 +28,12 @@ include(
     "components/auth_password_validators.py",
 )
 
-include(
-    "components/logging.py",
-)
+
+# debug sql
+if DEBUG:
+    include(
+        "components/logging.py",
+    )
 
 LANGUAGE_CODE = "ru-RU"
 
@@ -49,4 +52,4 @@ LOCALE_PATH = ["movies/locale"]
 
 STATIC_URL = "static/"
 
-STATIC_ROOT = "{BASE_DIR}/static".format(BASE_DIR=BASE_DIR)
+STATIC_ROOT = os.path.join(BASE_DIR, "static/")
