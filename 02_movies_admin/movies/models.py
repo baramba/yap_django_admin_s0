@@ -1,7 +1,7 @@
 import uuid
 
+from django.core.validators import MaxValueValidator, MinValueValidator
 from django.db import models
-from django.core.validators import MinValueValidator, MaxValueValidator
 from django.utils.translation import gettext_lazy as _
 
 
@@ -108,9 +108,7 @@ class GenreFilmwork(UUIDMixin):
         db_table = 'content"."genre_film_work'
         verbose_name = _("GenreFilmwork_verbose_name")
         verbose_name_plural = _("GenreFilmwork_verbose_name_plural")
-        indexes = [
-            models.Index(fields=["film_work", "genre"], name="film_work_genre_idx")
-        ]
+        indexes = [models.Index(fields=["film_work", "genre"], name="film_work_genre_idx")]
 
 
 class PersonFilmWork(UUIDMixin):
@@ -120,14 +118,14 @@ class PersonFilmWork(UUIDMixin):
     person = models.ForeignKey("Person", on_delete=models.CASCADE)
 
     # Роль участника в кинопроизведении
-    class RoleInWorkfilm(models.TextChoices):
+    class RoleInFilmwork(models.TextChoices):
         ACTOR = "actor", _("actor")
         DIRECTOR = "director", _("director")
         WRITER = "writer", _("writer")
 
     role = models.CharField(
         _("role"),
-        choices=RoleInWorkfilm.choices,
+        choices=RoleInFilmwork.choices,
         blank=False,
         max_length=10,
     )
@@ -139,8 +137,4 @@ class PersonFilmWork(UUIDMixin):
         verbose_name = _("PersonFilmWork_verbose_name")
         verbose_name_plural = _("PersonFilmWork_verbose_name_plural")
 
-        indexes = [
-            models.Index(
-                fields=["film_work", "person", "role"], name="person_film_work_role_idx"
-            )
-        ]
+        indexes = [models.Index(fields=["film_work", "person", "role"], name="person_film_work_role_idx")]
