@@ -28,6 +28,10 @@ include(
     "components/auth_password_validators.py",
 )
 
+include(
+    "components/logging.py",
+)
+
 LANGUAGE_CODE = "ru-RU"
 
 TIME_ZONE = "UTC"
