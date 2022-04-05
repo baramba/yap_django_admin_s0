@@ -10,7 +10,6 @@ from dotenv import load_dotenv
 from psycopg2 import OperationalError
 from psycopg2.extensions import cursor as _cursor
 from psycopg2.extras import DictCursor, execute_values
-
 from structures import TABLES
 
 
@@ -78,7 +77,7 @@ class SQLiteLoader(object):
                 yield rows_data
 
     def load_movies(self):
-        """load_movies Загружает данные из SQLite в классы соответсвуюшие классы.
+        """load_movies Загружает данные из SQLite в соответсвуюшие классы.
 
         Yields:
             генератор на порцию записей из таблицы
@@ -104,18 +103,6 @@ def open_sqlite(file_name: str):
         yield conn.cursor()
     finally:
         logging.info("Closing connection to SQLite")
-        conn.commit()
-        conn.close()
-
-
-@contextmanager
-def open_postgres(dsl: dict):
-    conn = psycopg2.connect(**dsl, cursor_factory=DictCursor)
-    try:
-        logging.info("Creating connection to Postgres")
-        yield conn.cursor()
-    finally:
-        logging.info("Closing connection to Postgres")
         conn.commit()
         conn.close()
 
